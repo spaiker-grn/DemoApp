@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentActivity
 import com.example.demoapp.di.appModule
 import com.example.uicommon.mvvm.NavControllerProvider
 import com.example.uicommon.mvvm.di.KoinFragmentFactory
+import com.example.uicommon.mvvm.di.uiCommonModule
 import com.example.usersprofiles.di.usersProfileModule
 import org.koin.android.ext.android.getKoin
 import org.koin.android.ext.koin.androidContext
@@ -20,7 +21,8 @@ class DemoAppApplication : Application() {
             modules(
                 listOf(
                     appModule,
-                    usersProfileModule
+                    usersProfileModule,
+                    uiCommonModule
                 )
             )
         }
@@ -31,15 +33,14 @@ class DemoAppApplication : Application() {
         registerActivityLifecycleCallbacks(onActivityCreatedLifecycleCallback)
     }
 
-    private val onActivityCreatedLifecycleCallback =
-        OnActivityCreatedCallback { activity ->
-            (activity as? FragmentActivity)?.let { fragmentActivity ->
-                val fragmentFactory = KoinFragmentFactory(
-                    activity = fragmentActivity,
-                    koin = getKoin()
-                )
+    private val onActivityCreatedLifecycleCallback = OnActivityCreatedCallback { activity ->
+        (activity as? FragmentActivity)?.let { fragmentActivity ->
+            val fragmentFactory = KoinFragmentFactory(
+                activity = fragmentActivity,
+                koin = getKoin()
+            )
 
-                fragmentActivity.supportFragmentManager.fragmentFactory = fragmentFactory
-            }
+            fragmentActivity.supportFragmentManager.fragmentFactory = fragmentFactory
         }
+    }
 }

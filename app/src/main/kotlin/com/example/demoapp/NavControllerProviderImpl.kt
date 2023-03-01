@@ -10,6 +10,7 @@ import androidx.navigation.fragment.NavHostFragment
 import com.example.uicommon.mvvm.NavControllerProvider
 
 class NavControllerProviderImpl: NavControllerProvider {
+
     private var navigationActivity: MainActivity? = null
 
     override fun get(): NavController? =

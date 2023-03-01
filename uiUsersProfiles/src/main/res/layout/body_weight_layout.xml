@@ -1,17 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:orientation="vertical">
 
     <TextView
-        android:id="@+id/userTextView"
-        android:textSize="40dp"
-        android:layout_width="wrap_content"
+        android:id="@+id/bodyPickerTitle"
+        style="@style/DemoApp.TextView"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="@string/BODY_PICKER_TITLE"
+        app:layout_constraintBottom_toTopOf="@id/numberPicker"
+        app:layout_constraintEnd_toEndOf="@id/endGuideline"
+        app:layout_constraintStart_toStartOf="@id/startGuideline"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <NumberPicker
+        android:id="@+id/numberPicker"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/radioGroup"
+        app:layout_constraintEnd_toEndOf="@id/endGuideline"
+        app:layout_constraintStart_toStartOf="@id/startGuideline"
+        app:layout_constraintTop_toBottomOf="@id/bodyPickerTitle" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingTop="20dp"
+        app:layout_constraintBottom_toTopOf="@id/navigation_bar_divider"
+        app:layout_constraintEnd_toEndOf="@id/endGuideline"
+        app:layout_constraintStart_toStartOf="@id/startGuideline"
+        app:layout_constraintTop_toBottomOf="@id/numberPicker">
+
+        <RadioButton
+            android:id="@+id/kgRadioButton"
+            style="@style/DemoApp.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:paddingLeft="15dp"
+            android:text="@string/USER_DOB_KL_WEIGHT_POSTFIX" />
+
+        <RadioButton
+            android:id="@+id/lbRadioButton"
+            style="@style/DemoApp.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:paddingLeft="15dp"
+            android:text="@string/USER_DOB_LB_WEIGHT_POSTFIX" />
+    </RadioGroup>
+
+    <include layout="@layout/navigation_merge" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

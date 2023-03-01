@@ -1,0 +1,45 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.DemoApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="DemoApp.Button" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textAppearance">@style/TextAppearance.DemoApp</item>
+    </style>
+
+    <style name="DemoApp.TextView" parent="Base.Widget.MaterialComponents.TextView">
+        <item name="android:textAppearance">@style/TextAppearance.DemoApp</item>
+        <item name="android:textColor">@color/ui_kit_color_bodyText</item>
+    </style>
+
+    <style name="DemoApp.TextView.Title" parent="DemoApp.TextView">
+        <item name="android:textColor">@color/ui_kit_color_midGrey</item>
+    </style>
+
+    <style name="TextAppearance.DemoApp" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">@dimen/text_size</item>
+    </style>
+
+    <style name="TextAppearance.DemoApp.Button" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+    </style>
+
+    <style name="DemoApp.DatePicker" parent="@android:style/Widget.Material.DatePicker">
+        <item name="android:datePickerMode">spinner</item>
+    </style>
+</resources>

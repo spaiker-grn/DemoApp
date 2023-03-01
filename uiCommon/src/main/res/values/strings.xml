@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">DemoApp</string>
+    <string name="MAIN_SCREEN_TITLE">Main Screen</string>
+    <string name="BODY_WEIGHT_SCREEN_TITLE">Enter Body Weight</string>
+    <string name="BIRTH_DAY_SCREEN_TITLE">Enter Date Of Birth</string>
+    <string name="PHOTO_SCREEN_TITLE">PHOTO</string>
+    <string name="EMPTY_USERS_LIST">No clients added so far</string>
+    <string name="ADD_CLIENT_BUTTON">ADD CLIENT</string>
+    <string name="NEXT_BUTTON">NEXT</string>
+    <string name="PICK_IMAGE_BUTTON">PICK</string>
+    <string name="EDIT_BUTTON">EDIT</string>
+    <string name="USER_WEIGHT_TITLE">Weight</string>
+    <string name="USER_DOB_TITLE">DOB</string>
+    <string name="USER_DOB_KL_WEIGHT_POSTFIX">kl</string>
+    <string name="USER_DOB_LB_WEIGHT_POSTFIX">lb</string>
+    <string name="BODY_PICKER_TITLE">Please set you weight</string>
+    <string name="DATE_OF_BIRTH_PICKER_TITLE">Please set date of birth</string>
+</resources>

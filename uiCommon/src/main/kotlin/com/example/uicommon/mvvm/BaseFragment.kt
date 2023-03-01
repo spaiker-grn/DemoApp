@@ -6,10 +6,13 @@ import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 
+
 abstract class BaseFragment<VM : BaseViewModel, VB : ViewBinding>(
     @LayoutRes layoutId: Int,
     viewModelProvider: (Fragment) -> VM
 ): Fragment(layoutId) {
+
+    abstract val toolbarTitle: String?
 
     protected val viewModel by lazy { viewModelProvider(this) }
 
@@ -22,6 +25,12 @@ abstract class BaseFragment<VM : BaseViewModel, VB : ViewBinding>(
         super.onViewCreated(view, savedInstanceState)
 
         fragmentViewBinding.onViewCreated(view)
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        this.activity?.title = toolbarTitle
     }
 
     override fun onDestroyView() {
