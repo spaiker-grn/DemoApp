@@ -1,7 +1,6 @@
 package com.example.usersprofiles.usersprofiles
 
 import com.example.uicommon.mvvm.BaseViewModel
-import com.example.usersprofiles.UpdatedUser
 import com.example.usersprofiles.model.UserCardModel
 import kotlinx.coroutines.flow.Flow
 
@@ -9,8 +8,8 @@ interface UsersProfilesViewModel : BaseViewModel {
 
     val viewState: Flow<List<UserCardModel>>
 
-    val updateStateFlow: Flow<UpdatedUser>
+    val updateStateFlow: Flow<UserCardModel>
 
-    fun updateUser(userId: String)
+    fun updateUser(userCardModel: UserCardModel)
 
 }

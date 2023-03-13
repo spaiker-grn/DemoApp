@@ -4,6 +4,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.uicommon.mvvm.BaseViewModelImpl
 import com.example.usersprofiles.model.BirthdayModel
 import com.example.usersprofiles.model.ImageModel
+import com.example.usersprofiles.model.UserCardModel
 import com.example.usersprofiles.model.WeightModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -11,14 +12,17 @@ import kotlinx.coroutines.launch
 
 class ProfileSharedViewModelImpl : BaseViewModelImpl(), ProfileSharedViewModel {
 
-    private var lastUpdateState: UpdatedUser? = null
+    private var lastUpdateState: UserCardModel? = null
 
-    private val _updateStateFlow = MutableSharedFlow<UpdatedUser>()
+    private val _updateStateFlow = MutableSharedFlow<UserCardModel>()
 
-    override val updateStateFlow: Flow<UpdatedUser> = _updateStateFlow
+    override val updateStateFlow: Flow<UserCardModel> = _updateStateFlow
 
-    override fun updateUser(userId: String) {
-        lastUpdateState = UpdatedUser(userId)
+    override val userState: UserCardModel?
+        get() = lastUpdateState
+
+    override fun updateUser(userCardModel: UserCardModel) {
+        lastUpdateState = userCardModel
     }
 
     override fun updateImageUri(imageModel: ImageModel) {
@@ -26,7 +30,7 @@ class ProfileSharedViewModelImpl : BaseViewModelImpl(), ProfileSharedViewModel {
     }
 
     override fun updateWeight(weightModel: WeightModel) {
-        lastUpdateState = lastUpdateState?.copy(weightModel = weightModel)
+        lastUpdateState = lastUpdateState?.copy(weight = weightModel)
     }
 
     override fun updateBirthday(birthdayModel: BirthdayModel) {

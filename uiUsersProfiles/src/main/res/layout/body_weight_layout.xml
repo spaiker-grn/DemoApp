@@ -46,7 +46,6 @@
             style="@style/DemoApp.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="true"
             android:paddingLeft="15dp"
             android:text="@string/USER_DOB_KL_WEIGHT_POSTFIX" />
 

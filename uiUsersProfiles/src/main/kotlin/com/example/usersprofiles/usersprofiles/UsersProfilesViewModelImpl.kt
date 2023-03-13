@@ -4,7 +4,6 @@ import androidx.lifecycle.viewModelScope
 import com.example.uicommon.mvvm.BaseViewModelImpl
 import com.example.uicommon.mvvm.NavControllerProvider
 import com.example.usersprofiles.ProfileSharedViewModel
-import com.example.usersprofiles.UpdatedUser
 import com.example.usersprofiles.model.UserCardModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -29,9 +28,9 @@ class UsersProfilesViewModelImpl(
                 usersState = usersState.toMutableList().apply {
                     if (index != -1) {
                         removeAt(index)
-                        add(index, UserCardModel.mapFromUpdateModel(updatedState))
+                        add(index, updatedState)
                     } else {
-                        add(UserCardModel.mapFromUpdateModel(updatedState))
+                        add(updatedState)
                     }
 
                     _viewState.emit(this)
@@ -40,11 +39,11 @@ class UsersProfilesViewModelImpl(
         }
     }
 
-    override val updateStateFlow: Flow<UpdatedUser>
+    override val updateStateFlow: Flow<UserCardModel>
         get() = profileSharedViewModel.updateStateFlow
 
-    override fun updateUser(userId: String) {
-        profileSharedViewModel.updateUser(userId)
+    override fun updateUser(userCardModel: UserCardModel) {
+        profileSharedViewModel.updateUser(userCardModel)
         navControllerProvider.navigateTo(UsersProfilesFragmentDirections.actionToEditBody())
     }
 

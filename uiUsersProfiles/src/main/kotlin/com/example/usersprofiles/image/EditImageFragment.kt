@@ -58,7 +58,7 @@ class EditImageFragment(
         activityResultRegistration = registerForStartActivityResult()
 
         lifecycleScope.launchWhenStarted {
-            viewModel.viewState.collect { changeState(it) }
+            viewModel.viewState.collect { changeState(it.imageUri) }
         }
     }
 

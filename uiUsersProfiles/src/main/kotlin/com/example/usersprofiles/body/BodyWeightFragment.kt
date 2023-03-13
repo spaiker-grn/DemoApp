@@ -39,6 +39,18 @@ class BodyWeightFragment(
                 wrapSelectorWheel = true
             }
         }
+
+        setWeightModel(binding, viewModel.viewState)
+    }
+
+    private fun setWeightModel(binding: BodyWeightLayoutBinding, weightModel: WeightModel?) {
+        binding.numberPicker.value = weightModel?.value ?: 0
+
+        when (weightModel?.weightUnit) {
+            WeightUnit.LB -> binding.lbRadioButton.isChecked = true
+            WeightUnit.KL -> binding.kgRadioButton.isChecked = true
+            else -> binding.kgRadioButton.isChecked = true
+        }
     }
 
     private fun getWeightModel(binding: BodyWeightLayoutBinding): WeightModel {

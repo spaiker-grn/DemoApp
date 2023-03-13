@@ -15,7 +15,7 @@ import com.example.usersprofiles.model.WeightUnit
 
 class UserFingerprint(
     private val imageProvider: ImageProvider,
-    private val onEditClick: (String) -> Unit
+    private val onEditClick: (UserCardModel) -> Unit
 ) : ItemFingerprint<UserCardListItemBinding, UserCardModel> {
 
     override fun isRelativeItem(listItem: ListItem) = listItem is UserCardModel
@@ -45,7 +45,7 @@ class UserFingerprint(
 class PostViewHolder(
     binding: UserCardListItemBinding,
     private val imageProvider: ImageProvider,
-    val onEditPost: (String) -> Unit
+    val onEditPost: (UserCardModel) -> Unit
 ) : BaseViewHolder<UserCardListItemBinding, UserCardModel>(binding) {
 
     override fun onBind(item: UserCardModel) {
@@ -78,7 +78,7 @@ class PostViewHolder(
             }
 
             editUserButton.setOnClickListener {
-                onEditPost(item.userId)
+                onEditPost(item)
             }
         }
     }

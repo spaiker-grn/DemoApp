@@ -10,6 +10,9 @@ class BirthdayViewModelImpl(
     private val navControllerProvider: NavControllerProvider,
 ) : BaseViewModelImpl(), BirthdayViewModel {
 
+    override val viewState: BirthdayModel?
+        get() = profileSharedViewModel.userState?.birthDate
+
     override fun onComplete(birthdayModel: BirthdayModel) {
         profileSharedViewModel.updateBirthday(birthdayModel)
         navControllerProvider.navigateTo(BirthdayFragmentDirections.actionToEditImage())

@@ -43,7 +43,14 @@ class UsersProfilesFragment(
             }
 
             addNewUserButton.setOnClickListener {
-                viewModel.updateUser(userId = System.currentTimeMillis().toString())
+                viewModel.updateUser(
+                    UserCardModel(
+                        userId = System.currentTimeMillis().toString(),
+                        image = null,
+                        birthDate = null,
+                        weight = null
+                    )
+                )
             }
         }
     }

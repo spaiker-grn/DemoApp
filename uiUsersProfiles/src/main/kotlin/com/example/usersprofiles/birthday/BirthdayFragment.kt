@@ -34,10 +34,20 @@ class BirthdayFragment(
     }
 
     private fun initViews(birthdayLayoutBinding: BirthdayLayoutBinding) {
-        birthdayLayoutBinding.apply {
-            birthdayPicker.apply {
-                maxDate = Calendar.getInstance().apply { add(Calendar.YEAR, -6) }.timeInMillis
+        birthdayLayoutBinding.birthdayPicker.apply {
+            viewModel.viewState?.let {
+                val calendar = Calendar.getInstance().apply {
+                    time = it.birthDate
+                }
+                init(
+                    calendar.get(Calendar.YEAR),
+                    calendar.get(Calendar.MONTH),
+                    calendar.get(Calendar.DAY_OF_MONTH),
+                    null
+                )
             }
+
+            maxDate = Calendar.getInstance().apply { add(Calendar.YEAR, -6) }.timeInMillis
         }
 
         mergeBinding?.nextButton?.setOnClickListener {
