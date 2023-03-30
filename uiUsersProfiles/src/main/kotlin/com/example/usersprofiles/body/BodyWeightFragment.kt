@@ -18,7 +18,7 @@ class BodyWeightFragment(
     override val toolbarTitle: String by lazy { getString(com.example.uicommon.R.string.BODY_WEIGHT_SCREEN_TITLE) }
     private var mergeBinding: NavigationMergeBinding? = null
 
-    override val fragmentViewBinding: FragmentViewBinding<BodyWeightLayoutBinding> =
+    override val initViewBinding: () -> FragmentViewBinding<BodyWeightLayoutBinding> = {
         FragmentViewBinding(
             bind = {
                 mergeBinding = NavigationMergeBinding.bind(it)
@@ -27,6 +27,7 @@ class BodyWeightFragment(
             initViews = ::initViews,
             clearViews = ::clearViews
         )
+    }
 
     private fun initViews(binding: BodyWeightLayoutBinding) {
         mergeBinding?.nextButton?.setOnClickListener {

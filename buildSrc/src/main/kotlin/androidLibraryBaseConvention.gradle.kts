@@ -44,4 +44,6 @@ dependencies {
     implementation (Libraries.navigationFragmentKtx)
     implementation (Libraries.navigationUiKtx)
     implementation (Libraries.navigationUiKtx)
+    implementation (Libraries.daggerCore)
+    implementation (Libraries.daggerAnnotation)
 }

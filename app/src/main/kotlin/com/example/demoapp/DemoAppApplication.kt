@@ -2,10 +2,10 @@ package com.example.demoapp
 
 import android.app.Application
 import androidx.fragment.app.FragmentActivity
-import com.example.demoapp.di.appModule
+import com.example.demoapp.di.koin.appModule
 import com.example.uicommon.mvvm.NavControllerProvider
-import com.example.uicommon.mvvm.di.KoinFragmentFactory
-import com.example.uicommon.mvvm.di.uiCommonModule
+import com.example.uicommon.mvvm.di.koin.KoinFragmentFactory
+import com.example.uicommon.mvvm.di.koin.uiCommonModule
 import com.example.usersprofiles.di.usersProfileModule
 import org.koin.android.ext.android.getKoin
 import org.koin.android.ext.koin.androidContext

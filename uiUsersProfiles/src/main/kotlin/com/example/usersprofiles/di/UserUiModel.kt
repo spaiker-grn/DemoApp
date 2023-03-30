@@ -4,8 +4,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
-import com.example.uicommon.mvvm.di.fragmentFactory
-import com.example.uicommon.mvvm.di.viewModelFactory
+import com.example.uicommon.mvvm.di.koin.fragmentFactory
+import com.example.uicommon.mvvm.di.koin.viewModelFactory
 import com.example.usersprofiles.ProfileSharedViewModelImpl
 import com.example.usersprofiles.birthday.BirthdayFragment
 import com.example.usersprofiles.birthday.BirthdayViewModelImpl

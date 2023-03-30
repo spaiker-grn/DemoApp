@@ -38,15 +38,20 @@ android {
 
 dependencies {
 
-    implementation (Libraries.ktxCore)
-    implementation (Libraries.appCompat)
-    implementation (Libraries.material)
-    implementation (Libraries.constraintLayout)
-    implementation (Libraries.koinCore)
-    implementation (Libraries.koinAndroid)
-    implementation (Libraries.navigationFragmentKtx)
-    implementation (Libraries.navigationUiKtx)
+    implementation(Libraries.ktxCore)
+    implementation(Libraries.appCompat)
+    implementation(Libraries.material)
+    implementation(Libraries.constraintLayout)
+    implementation(Libraries.koinCore)
+    implementation(Libraries.koinAndroid)
+    implementation(Libraries.navigationFragmentKtx)
+    implementation(Libraries.navigationUiKtx)
+    implementation(Libraries.daggerCore)
+    implementation(Libraries.daggerAnnotation)
 
     implementation(project(":uiCommon"))
     implementation(project(":uiUsersProfiles"))
+
+    implementation("io.ktor:ktor-client-cio:2.2.4")
+    implementation("io.ktor:ktor-client-core:2.2.4")
 }

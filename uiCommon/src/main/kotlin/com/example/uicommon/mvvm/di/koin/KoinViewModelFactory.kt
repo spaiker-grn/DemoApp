@@ -1,4 +1,4 @@
-package com.example.uicommon.mvvm.di
+package com.example.uicommon.mvvm.di.koin
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

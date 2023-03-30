@@ -9,6 +9,7 @@ private object Versions {
     const val koin = "3.2.2"
     const val navVersion = "2.5.3"
     const val navigation = "2.5.3"
+    const val dagger = "2.45"
 }
 
 object AndroidSdk {
@@ -36,4 +37,7 @@ object Libraries {
     const val koinCore = "io.insert-koin:koin-core:${Versions.koin}"
     const val navigationFragmentKtx = "androidx.navigation:navigation-fragment-ktx:${Versions.navVersion}"
     const val navigationUiKtx = "androidx.navigation:navigation-ui-ktx:${Versions.navVersion}"
+
+    const val daggerCore = "com.google.dagger:dagger:${Versions.dagger}"
+    const val daggerAnnotation = "com.google.dagger:dagger-compiler:${Versions.dagger}"
 }

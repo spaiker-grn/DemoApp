@@ -7,7 +7,8 @@ import com.example.usersprofiles.R
 import com.example.usersprofiles.databinding.BirthdayLayoutBinding
 import com.example.usersprofiles.databinding.NavigationMergeBinding
 import com.example.usersprofiles.model.BirthdayModel
-import java.util.*
+import java.util.Calendar
+import java.util.Date
 
 class BirthdayFragment(
     viewModelProvider: (Fragment) -> BirthdayViewModel
@@ -19,7 +20,7 @@ class BirthdayFragment(
     override val toolbarTitle: String by lazy { getString(com.example.uicommon.R.string.BIRTH_DAY_SCREEN_TITLE) }
     private var mergeBinding: NavigationMergeBinding? = null
 
-    override val fragmentViewBinding: FragmentViewBinding<BirthdayLayoutBinding> =
+    override val initViewBinding: () -> FragmentViewBinding<BirthdayLayoutBinding> = {
         FragmentViewBinding(
             bind = {
                 mergeBinding = NavigationMergeBinding.bind(it)
@@ -28,6 +29,7 @@ class BirthdayFragment(
             initViews = ::initViews,
             clearViews = ::clearViews
         )
+    }
 
     private fun clearViews(birthdayLayoutBinding: BirthdayLayoutBinding) {
         mergeBinding?.nextButton?.setOnClickListener(null)

@@ -1,4 +1,4 @@
-package com.example.uicommon.mvvm.di
+package com.example.uicommon.mvvm.di.koin
 
 import com.example.uicommon.mvvm.ImageProvider
 import com.example.uicommon.mvvm.ImageProviderImpl

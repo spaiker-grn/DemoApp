@@ -1,11 +1,11 @@
-package com.example.demoapp.di
+package com.example.demoapp.di.koin
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.demoapp.NavControllerProviderImpl
 import com.example.uicommon.mvvm.NavControllerProvider
-import com.example.uicommon.mvvm.di.KoinViewModelFactory
+import com.example.uicommon.mvvm.di.koin.KoinViewModelFactory
 import org.koin.dsl.module
 
 val appModule = module {

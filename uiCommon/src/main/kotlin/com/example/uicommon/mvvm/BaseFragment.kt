@@ -16,7 +16,11 @@ abstract class BaseFragment<VM : BaseViewModel, VB : ViewBinding>(
 
     protected val viewModel by lazy { viewModelProvider(this) }
 
-    abstract val fragmentViewBinding: FragmentViewBinding<VB>
+    private val fragmentViewBinding: FragmentViewBinding<VB> by lazy {
+        initViewBinding.invoke()
+    }
+
+    abstract val initViewBinding: () -> FragmentViewBinding<VB>
 
     protected val fragmentBinding: VB?
         get() = fragmentViewBinding.get()

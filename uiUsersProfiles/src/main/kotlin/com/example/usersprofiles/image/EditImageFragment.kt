@@ -42,7 +42,7 @@ class EditImageFragment(
     override val toolbarTitle: String by lazy { getString(com.example.uicommon.R.string.BIRTH_DAY_SCREEN_TITLE) }
     private var mergeBinding: NavigationMergeBinding? = null
 
-    override val fragmentViewBinding: FragmentViewBinding<EditImageLayoutBinding> =
+    override val initViewBinding: () -> FragmentViewBinding<EditImageLayoutBinding> = {
         FragmentViewBinding(
             bind = {
                 mergeBinding = NavigationMergeBinding.bind(it)
@@ -51,6 +51,7 @@ class EditImageFragment(
             initViews = ::initView,
             clearViews = ::clearView
         )
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

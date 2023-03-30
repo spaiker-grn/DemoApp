@@ -26,12 +26,13 @@ class UsersProfilesFragment(
 ) {
     override val toolbarTitle: String by lazy { getString(com.example.uicommon.R.string.MAIN_SCREEN_TITLE) }
 
-    override val fragmentViewBinding: FragmentViewBinding<UsersScreenLayoutBinding> =
+    override val initViewBinding: () -> FragmentViewBinding<UsersScreenLayoutBinding> = {
         FragmentViewBinding(
             bind = { UsersScreenLayoutBinding.bind(it) },
             initViews = ::initViews,
             clearViews = ::clearViews
         )
+    }
 
     private val usersAdapter = FingerprintAdapter(getFingerprints())
     private fun initViews(binding: UsersScreenLayoutBinding) {
